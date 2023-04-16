@@ -1,0 +1,67 @@
+h1{
+    margin-left: 33%;
+    margin-right: 33%;
+    margin-top: 15%;
+    text-align: center;
+    border-style: dashed;
+
+}
+table {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: blue;
+  padding: 5px;
+  border-radius: 5px;
+  border-color: black;
+  border-width: 5px;
+  border-style: dashed;
+}
+
+input {
+    
+  width: 100%;
+  font-size: 18px;
+  line-height: 15px;
+  border-radius: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bolder;
+  text-align: right;
+  font-style: normal;
+  font-variant: normal;
+}
+.empty_column {
+  
+  width: 25px;
+}
+
+button {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  line-height: 15px;
+  padding: 18px;
+  border-radius: 5px;
+  font-family: Georgia, serif;
+  font-weight: normal;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  background-image: linear-gradient(
+    to right,
+    rgb(98, 106, 111) 0%,
+    rgb(153, 168, 178) 50%,
+    rgb(152, 162, 169) 100%
+  );
+  box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px;
+  border: 2px groove rgb(28, 110, 164);
+  display: inline-block;
+  width: 100%;
+  
+}
+button:hover {
+  background: #75838b;
+}
+button:active {
+  background: #778289;
+}
