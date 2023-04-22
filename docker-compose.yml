@@ -2,7 +2,7 @@ version: "3.8"
 services:
   web:
     build: ./app
-    ##image: appcontainer:standalone
+    image: 475803405878.dkr.ecr.us-east-2.amazonaws.com/calc_django_docker_aws:web_service
     command: gunicorn config.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - ./app:/app
@@ -12,7 +12,7 @@ services:
 
   nginx:
     build: ./nginx
-    ##image: appcontainer:standalone
+    image: 475803405878.dkr.ecr.us-east-2.amazonaws.com/calc_django_docker_aws:nginx_service
     volumes:
       - static_files:/home/app/staticfiles  #this line creates the directory (volume) : Note 1
                                             #this creates a shareable volume between the web and nginx service. e.g share files between containers
