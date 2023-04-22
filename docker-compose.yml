@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  web:
+    build: ./app
+    ##image: appcontainer:standalone
+    command: gunicorn config.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - ./app:/app
+      - static_files:/app/calc_app/static/calc_app/
+    expose:
+      - 8000
+
+  nginx:
+    build: ./nginx
+    ##image: appcontainer:standalone
+    volumes:
+      - static_files:/home/app/staticfiles  #this line creates the directory (volume) : Note 1
+                                            #this creates a shareable volume between the web and nginx service. e.g share files between containers
+    ports:
+      - 8000:80
+    depends_on:
+      - web   #makes sure that nginx runs/is created after the above web service
+volumes:
+  static_files:                     #creates the link between containers to share files/volumes
+
+

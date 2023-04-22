@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  web:
+    build: ./app
+    ##image: appcontainer:standalone
+    command: gunicorn config.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - ./app/:/usr/src/app/
+      - static_volume:/usr/src/app/static
+    expose:
+      - 8000
+
+  nginx:
+    build: ./nginx
+    ##image: appcontainer:standalone
+    volumes:
+      - static_volume:/usr/src/app/static
+    ports:
+      - 8000:80
+    depends_on:
+      - web
+
+
+volumes:
+  static_volume: 
+      ./app
