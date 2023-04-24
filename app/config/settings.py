@@ -28,7 +28,7 @@ DEBUG = False ##config('DEBUG', default = False, cast = bool)
 ##Template_DEBUG = DEBUG
 
 ##ALLOWED_HOSTS = ['.localhost']      
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'ec2-3-136-99-100.us-east-2.compute.amazonaws.com'] 
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', '3.136.99.100' , 'mannycalc.com'] 
 
 
 
