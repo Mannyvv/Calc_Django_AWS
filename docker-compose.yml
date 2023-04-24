@@ -14,13 +14,14 @@ services:
     build: ./nginx
     image: 475803405878.dkr.ecr.us-east-2.amazonaws.com/calc_django_docker_aws:nginx_service
     volumes:
-      - static_files:/home/app/staticfiles  #this line creates the directory (volume) : Note 1
+      - static_files:/home/app/staticfiles 
                                             #this creates a shareable volume between the web and nginx service. e.g share files between containers
     ports:
-      - 8000:80
+      - 80:80
+      ##- 8000:80 for development 
     depends_on:
-      - web   #makes sure that nginx runs/is created after the above web service
+      - web   #makes sure that nginx runs and is created after the above web service
 volumes:
-  static_files:                     #creates the link between containers to share files/volumes
+  static_files:                     #creates the link between containers to share files between containers
 
 
